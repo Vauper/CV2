@@ -1,0 +1,619 @@
+html {
+    scroll-behavior: smooth;
+    --fuente-xxl: clamp(3.5rem,5vw,7rem);
+    --fuente-xl: clamp(2.5rem,2.5vw,5rem);
+    --fuente-l: clamp(1.5rem,1.5vw,3rem);
+    --fuente-m: clamp(1.2rem,1.2vw,1.8rem);
+    --fuente-n: clamp(1rem,1vw,1.6rem);
+
+    --clr-primario:#06aed5;
+    --clr-primario-b:#05A3C7  ;
+    --clr-secundario: #EBEBEB;  
+    --clr-secundario-b: #D6D6D6 ;
+    --clr-fuentes-a: #151E3F;
+    --clr-fuentes-b: #030027;
+    --clr-navbar-bg: hsla(229, 22%, 90%, 0.541);
+    --clr-acentos-a:#06aed5;
+    --clr-acentos-b:#24D2F9;
+    --clr-a:#EBEBEB;
+    --blend: lighten;
+ 
+}
+
+
+
+.modoOscuro {
+    --clr-primario: #06aed5;
+    --clr-primario-b:#036277;
+    --clr-secundario: #030027;
+    --clr-secundario-b: #151E3F;
+    --clr-fuentes-a: #F5F5F5;
+    --clr-fuentes-b: white;
+    --clr-navbar-bg: hsl(227, 50%, 16%, 0.4);
+    --clr-acentos-b:#24D2F9;
+    --blend: multiply;
+}
+
+* {
+    box-sizing: border-box;
+    transition-property: all;
+    transition-duration: 250ms;
+    font-family: 'Noto Sans', sans-serif;
+    
+}
+
+h1,h3,h4,h5,.whatsapp{
+    color: var(--clr-fuentes-a);
+}
+
+p,li {
+    color: var(--clr-fuentes-b);
+    font-size: var(--fuente-n);
+}
+
+h1 {
+    font-family: 'Poppins', sans-serif;
+    font-size: var(--fuente-xxl);
+    
+}
+
+h2 {
+    font-family: 'Poppins', sans-serif;
+    font-size: var(--fuente-xl);
+}
+
+h3 {
+    font-family: 'Poppins', sans-serif;
+    font-size: var(--fuente-l); 
+}
+
+h4,h5 {
+    font-family: 'Poppins', sans-serif;
+    font-size: var(--fuente-m);
+}
+
+body {
+    padding-top: 121px;
+    background-color: var(--clr-secundario);
+    background-image: linear-gradient(336deg, var(--clr-secundario) 0%, var(--clr-secundario-b) 37%, var(--clr-primario) 100%);
+    overflow-x: hidden; /*para evitar overflow del menu escondido*/
+    margin: 0%;
+}
+
+
+#boton-modo-oscuro {
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    float: right;
+    background-color: transparent;
+    color: var(--clr-fuentes-a);
+}
+
+#boton-modo-oscuro:hover {
+    color: var(--clr-secundario);
+}
+
+.whatsapp {
+    position:fixed;
+    width: 60px;
+    height: 60px;
+    bottom:20px;
+    right:20px;
+    background-color: var(--clr-navbar-bg);
+    border-radius:100%;
+    text-align: center;
+    font-size:40px;
+    z-index:998;
+    box-shadow: 1px 1px 1px var(--clr-secundario);
+}
+
+.whatsapp:hover{
+    color: var(--clr-acentos-b);
+    background-color: var(--clr-secundario-b);    
+}
+
+header {
+    background-color: transparent;
+    align-items: center;
+    justify-content: space-between;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 100;
+    display: flex;
+    gap: 1rem;
+    color: var(--clr-fuentes-a);
+    min-height: 83px;
+}
+
+.boton-contacto {
+    background-color: var(--clr-secundario-b);
+    padding: 0.7rem 1rem ;
+    border-radius: 50px;
+}
+
+
+img {
+    max-width: 100%;
+}
+
+.logo {
+    height: auto;
+    min-width: 180px;
+    max-width: 277px;
+    margin: 1rem;
+}
+
+.titulo {
+    color: var(--clr-fuentes-a);
+    margin-left: 2rem;
+    white-space: nowrap;
+    font-size: clamp(1.2rem,1.5vw,3rem);;
+}
+
+
+/*-------navegador-------- en a base a: https://www.youtube.com/watch?v=HbBMp6yUXO0 */
+
+.navbar {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: var(--gap, 1rem);
+    flex-wrap: nowrap;
+}
+
+.navbar a {
+    text-decoration: none;
+    color: var(--clr-fuentes-a);
+}
+
+.navbar a:hover {
+    color: var(--clr-secundario);
+}
+
+.navbar .boton-contacto:hover {
+    color: var(--clr-acentos-b);
+}
+
+
+.navbar[data-visible="true"]{
+    transform: translateX(0%);
+}
+
+
+.menu {
+    display: none;
+    border-radius: 100%;
+}
+
+.modo {
+    color: var(--clr-secundario-b);
+    border-radius: 100%;
+    background-color:  var(--clr-fuentes-a);
+}
+
+
+
+/*----------------------------------------------------portada---------------------------------------------*/
+
+.portada {
+    margin: 0px 10%;
+    display: flex;
+    align-items: center;
+    justify-items: center;
+    text-align: center;
+    flex-wrap: wrap;
+    max-height: 100%;
+}
+
+.portada > img {
+    flex: 30%;
+}
+
+.portada > div {
+    flex: 30%;
+
+}
+
+#portada > div > h1 {
+    font-weight: 700;
+    margin: auto;
+}
+
+.datos-personales {
+    background-color: var(--clr-secundario-b);
+    border-radius: 25px;
+    padding: 20px;
+    list-style: none;
+    width: fit-content;
+    line-height: 40px;
+    font-size: var(--fuente-l);
+    margin: auto;
+}
+
+.separador {
+    background-color: transparent;   
+    color: var(--clr-fuentes-a);
+    padding: 1rem 2rem;
+    text-align: right;
+    border-radius: 25px 25px 0 0;
+}
+
+.separador > h2 {
+    margin: 0;
+}
+
+
+
+
+/*--------------------------------------------EXPERIENCIA LABORAL----------------------------------------*/
+#experiencia-laboral {
+    width: 90%;
+    margin: 0 auto;
+    background-color: var(--clr-secundario);
+    background-image: linear-gradient(90deg, var(--clr-secundario) 0%, var(--clr-secundario-b) 100%);
+    border-radius: 25px;
+    overflow: hidden;
+}
+
+.solapasTrabajo {
+    border-left: var(--clr-secundario) solid 2px;
+    border-right: var(--clr-secundario-b) solid 2px;   
+}
+
+.navegadorTrabajo {
+    display: grid;
+    grid-template-columns: repeat(5, minmax(2rem,1fr));
+    justify-items: center;  
+    line-height: 0;
+    max-width: 1200px;
+    padding: 15px 10px 20px 10px;
+    margin: 0 auto;
+}
+
+.botonSolapaTrabajo{
+    background-color: transparent;
+    padding: 10px;
+    overflow: hidden;
+    min-width: 0;
+    min-height: 0;
+    max-height: 90px;
+    line-height: 0;
+    border: none;
+    max-width: 250px;
+    margin: 10px 5px 00px 5px;
+    border-radius: 25px;
+}
+
+.botonSolapaTrabajo > img {
+    object-fit: contain;
+    max-height: 100%;
+}
+
+.botonSolapaTrabajo > .imgbase {
+    filter: invert(1);
+}
+
+.botonSolapaTrabajo > .imgcolor{
+    display: none;
+}
+
+.botonActivo {
+    border: none;
+    border-radius: 25px;
+}
+
+.botonActivo > .imgbase{
+    display: none;
+}
+
+.botonActivo > .imgcolor {
+    display:inline ;
+}
+
+.botonSolapaTrabajo:hover {
+    cursor: pointer;
+}
+
+
+.trabajo {  
+    display: grid;
+    gap: 2rem;
+    grid-template-columns:  repeat(auto-fit, minmax(200px,1fr));
+    padding: 1rem 3rem 2.5rem;
+    align-items: center;
+    text-align: center;
+}
+
+.trabajo > img {
+    border-radius: 25px;
+    max-height:100%;
+}
+
+#musimundo, #turismo, #mastermed, #voluntario {
+    display: none;
+}
+
+/*-------------------------------------------------------------------------------EDUCACION--------------------------------------------------------------------------------*/
+
+
+#formacion-academica {
+    width: 90%;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+    margin: 4rem auto;
+    border-radius: 25px;
+    overflow: hidden;
+    background-color: var(--clr-secundario-b);
+    background-image: linear-gradient(160deg, var(--clr-secundario-b) 0%, #05afd6 100%);
+
+}
+
+
+.educacion {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px,1fr));
+    align-items: center;
+    justify-content: center;
+    padding: 1rem 2rem;
+
+
+}
+
+.biologia, .musica, .salesiano {
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-blend-mode: var(--blend);
+    min-height: 370px;
+    padding-bottom: 2rem;
+}
+
+.biologia {   
+    background-image: 
+    linear-gradient(to right, var(--clr-secundario-b), var(--clr-primario-b)),
+    url(../imagenes/educacion/animals-iguana-green-nature.jpg);
+    background-position: 0 35%;
+}
+
+.musica {   
+    background-image: 
+    linear-gradient(to right,var(--clr-secundario-b), var(--clr-primario-b)),
+    url(../imagenes/educacion/Guitarra.png);
+    background-position: 0 40%;
+}
+
+.salesiano {   
+    background-image: 
+    linear-gradient(to right,var(--clr-secundario-b), var(--clr-primario-b)),
+    url(../imagenes/educacion/salesiano.jpg);
+    background-position: 0 85%;
+}
+
+.educacion > img {
+    max-height: 180px;
+    max-width: 250px;
+    margin: 40px auto;
+}
+
+.edu-oscuro {
+    background-color: hsl(0, 0%, 100%, 0.1);
+}
+
+.acordeon {
+    width: 100%;
+    border: none;
+    text-align: center;
+    background-color: var(--clr-secundario-b);
+    overflow: hidden;
+    color: var(--clr-fuentes-a);
+    font-family: 'Poppins', sans-serif;
+    font-size: var(--fuente-l);
+    padding: 1rem 2rem;
+}
+
+.acordeon > i {
+    float: inline-end;
+    font-size: var(--fuente-l);
+}
+
+.acordeonActivo > i {
+    transform: rotate(180deg);
+}
+
+.acordeon:hover{
+    background-color: var(--clr-secundario);
+    cursor: pointer;
+    
+}
+
+.acordeonActivo {
+    background-color: var(--clr-secundario);
+}
+
+.panel {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease-out;
+}
+
+#formacion-academica, #experiencia-laboral {
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+/*-------------------------------------------------------------------CONTACTO-----------------------------------------------------------------------*/
+
+#contacto {
+    width: 95%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+#contacto > .separador > h1{
+    text-align: center;
+}
+
+input[type=text], select, textarea {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-top: 6px;
+    margin-bottom: 16px;
+    resize: vertical;
+    
+  }
+  
+  
+  input[type=submit] {
+    color: var(--clr-secundario-b);
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: var(--fuente-n);
+    background-color: var(--clr-fuentes-a);
+  }
+
+  input[type=email] {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-top: 6px;
+    margin-bottom: 16px;
+    
+  }
+  
+  input[type=submit]:hover {
+    background-color:  var(--clr-fuentes-c);
+  }
+  
+  .container {
+    border-radius: 5px;
+    padding: 2rem 15% ;
+    margin-bottom: 10%;    
+  }
+
+  
+label {
+    color: var(--clr-fuentes-a);
+}
+
+footer {
+    background-color: black;
+    padding: 6px;
+    display: flex;
+}
+
+footer > p {
+    color: var(--clr-fuentes-a);
+    font-size: small;
+}
+
+.socials {
+    display: flex;
+    font-size: 2.8rem;
+    justify-content: center;
+    gap: 4rem;
+    margin: 3rem 0px;
+    float: center;
+}
+
+.socials > a {
+    text-decoration: none !important;
+    color: var(--clr-fuentes-a)
+}
+
+.socials > a:hover {
+    color: var(--clr-acentos-b);
+}
+
+@media (max-width: 35em) {
+    .navbar{
+        --gap: 2em;
+        position: fixed;
+        z-index: 900;
+        inset: 0 0 0 30%;
+        flex-direction: column;
+        padding: min(10vh,4rem) 2em;
+        background: var(--clr-navbar-bg);
+        backdrop-filter: blur(1rem);
+        transform: translateX(100%); /*para esconder el menu*/
+        transition: transform 350ms ease-out;
+        padding-top: 7rem;
+        text-align: center;
+        font-size: var(--fuente-xl);
+    }
+
+
+    .menu{
+        display: block;
+        position: fixed;
+        z-index: 999; /*para que el boton este siempre arriba de todos los otros elementos*/
+        width: 2rem;
+        border: 0;
+        right: 2rem;
+        background-color:transparent;
+        font-size: 1.7rem;
+        color: var(--clr-fuentes-a);
+        top: 1.4rem;
+    }
+
+    #portada {
+        margin-top: 3rem;
+    }
+
+    .datos-personales {
+        line-height: 40px;
+    }
+
+    #boton-modo-oscuro {
+        margin-right: 60px;
+    }
+    
+    .logo {
+        width: 256px;
+    }
+
+    .whatsapp {
+        font-size: 30px;
+        width: 44px;
+        height: 44px;
+        bottom:15px;
+        right:15px;
+    }
+
+    #formacion-academica, #experiencia-laboral {
+        width: 100%;
+        border-radius: 0;
+        margin: 0;
+    }
+    
+    #contacto {
+        margin-top: 2rem;
+    }
+
+}
+
+@media (min-width: 35em) {
+    .navbar {
+        --gap: clamp(0.5rem, 3vw, 8rem);;
+        padding-block: 1rem;
+        padding-inline: clamp(1rem, 2vw, 10rem);
+    }
+
+}
+
+
+@media (max-width: 35em) {    
+    .socials {
+        gap: 1.5rem;
+        font-size: 2.5rem;
+    }
+}
