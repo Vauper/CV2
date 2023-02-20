@@ -1,6 +1,5 @@
 const staticCV = "CV-v1"
 const assets = [
-  "/",
   "index.html",
   "css/estilos.css",
   "js/app.js",
