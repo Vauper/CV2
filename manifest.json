@@ -1,8 +1,8 @@
 {
     "name": "Curriculum Vitae Pablo David Cad",
     "short_name": "CV Pablo Cad",
-    "theme_color": "#f5ebb8",
-    "background_color": "#151e3f",
+    "theme_color": "#06aed5",
+    "background_color": "#06aed5",
     "display": "standalone",
     "orientation": "portrait",
     "start_url": "/index.html",
