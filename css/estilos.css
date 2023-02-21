@@ -167,6 +167,7 @@ img {
 .navbar a {
     text-decoration: none;
     color: var(--clr-fuentes-a);
+    font-family: 'poppins',sans serif;
 }
 
 .navbar a:hover {
@@ -506,14 +507,16 @@ label {
 }
 
 footer {
-    background-color: black;
+    background-color:#030027;
     padding: 6px;
     display: flex;
+    align-items: center;
 }
 
 footer > p {
     color: var(--clr-fuentes-a);
     font-size: small;
+padding-left: 1rem;
 }
 
 .socials {
@@ -548,9 +551,11 @@ footer > p {
         transition: transform 350ms ease-out;
         padding-top: 7rem;
         text-align: center;
-        font-size: var(--fuente-xl);
     }
 
+    .navbar a{
+        font-size: var(--fuente-m);
+    }
 
     .menu{
         display: block;
