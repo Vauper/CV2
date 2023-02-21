@@ -375,21 +375,21 @@ img {
 .biologia {   
     background-image: 
     linear-gradient(to right, var(--clr-secundario-b), var(--clr-primario-b)),
-    url(../imagenes/educacion/animals-iguana-green-nature.jpg);
+    url(../imagenes/educacion/animals-iguana-green-nature.webp);
     background-position: 0 35%;
 }
 
 .musica {   
     background-image: 
     linear-gradient(to right,var(--clr-secundario-b), var(--clr-primario-b)),
-    url(../imagenes/educacion/Guitarra.png);
+    url(../imagenes/educacion/Guitarra.webp);
     background-position: 0 40%;
 }
 
 .salesiano {   
     background-image: 
     linear-gradient(to right,var(--clr-secundario-b), var(--clr-primario-b)),
-    url(../imagenes/educacion/salesiano.jpg);
+    url(../imagenes/educacion/salesiano.webp);
     background-position: 0 85%;
 }
 
