@@ -571,7 +571,7 @@ footer > p {
 
     .menu{
         display: block;
-        position: absolute.;
+        position: absolute;
         z-index: 999; /*para que el boton este siempre arriba de todos los otros elementos*/
         width: 2rem;
         border: 0;
