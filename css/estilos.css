@@ -423,7 +423,7 @@ img {
 }
 
 .acordeon > i {
-    float: inline-end;
+    float: right;
     font-size: var(--fuente-l);
 }
 
